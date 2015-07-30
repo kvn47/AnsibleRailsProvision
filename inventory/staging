@@ -1,0 +1,16 @@
+web1 ansible_ssh_host=188.226.235.14
+
+[web]
+web1
+
+[database]
+web1
+
+[web:vars]
+repository=git@bitbucket.org:k4ir05/myhomecollection.git
+ansible_ssh_private_key_file=~/.ssh/id_rsa
+ansible_ssh_user=root
+app_name=projectxx
+app_path=/var/www/projectxx
+rails_env=production
+user=deploy

@@ -1,0 +1,25 @@
+---
+- name: installs rails
+  command: gem install rails creates=/usr/local/bin/rails
+
+- name: configures logrotate
+  template: src=logrotate.j2 dest=/etc/logrotate.d/app mode=644
+
+- name: clones repository
+  git: repo={{repository}} dest={{app_path}} update=no accept_hostkey=yes
+
+- name: changes app path owner
+  file: path={{app_path}} recurse=yes owner={{user}}
+
+- name: bundle install
+  sudo_user: "{{ user }}"
+  command: bundle install --deployment chdir={{ app_path }}
+  register: bundler
+
+- name: setups database
+  sudo_user: "{{ user }}"
+  command: bundle exec rake db:setup RAILS_ENV={{rails_env}} chdir={{app_path}}
+
+- name: compile assets
+  sudo_user: "{{ user }}"
+  command: bundle exec rake assets:precompile RAILS_ENV={{ rails_env }} chdir={{ app_path }}
