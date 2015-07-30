@@ -13,7 +13,7 @@
 
 - name: bundle install
   sudo_user: "{{ user }}"
-  command: bundle install --deployment chdir={{ app_path }}
+  command: bundle install --deployment --without development test chdir={{ app_path }}
   register: bundler
 
 - name: setups database
