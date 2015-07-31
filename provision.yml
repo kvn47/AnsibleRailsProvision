@@ -1,8 +1,8 @@
 ---
-- hosts: database
-  sudo: true
-  roles:
-    - postgresql-server
+#- hosts: database
+#  sudo: true
+#  roles:
+#    - postgresql-server
 
 - hosts: web
   sudo: true
@@ -11,8 +11,10 @@
   roles:
     - git
     - postgresql-client
-    - rails
-    - puma
-    - nginx
-    - imagemagick
     - redis
+    - rails
+    - imagemagick
+    - ChengLong.nginx-passenger
+#    - nginx
+#    - passenger
+#    - puma
