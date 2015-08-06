@@ -14,6 +14,11 @@
   template: src=puma.rb.j2 dest={{ app_path }}/config/puma.rb mode=644
   notify: restart puma
 
+- name: adds nginx conf
+  template: src=nginx.conf.j2 dest=/etc/nginx/sites-available/action-cable.conf force=true
+  command: ln -sf /etc/nginx/sites-available/action-cable.conf /etc/nginx/sites-enabled/
+  notify: restart nginx
+
 - name: creates puma pid folder
   file: path={{app_path}}/tmp/pids owner={{user}} group={{user}} state=directory
 
