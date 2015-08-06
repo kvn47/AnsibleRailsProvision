@@ -75,7 +75,7 @@ stdout_redirect '{{ app_path }}/log/stdout', '{{ app_path }}/log/stderr', true
 # bind 'unix:///var/run/puma.sock'
 # bind 'unix:///var/run/puma.sock?umask=0777'
 # bind 'ssl://127.0.0.1:9292?key=path_to_key&cert=path_to_cert'
-#bind 'unix:/tmp/{{ app_name }}.sock'
+bind 'unix:/tmp/{{ app_name }}.sock'
 
 port 28080
 
