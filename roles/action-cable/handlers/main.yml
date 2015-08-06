@@ -1,2 +1,5 @@
 - name: restart puma
   service: name=puma state=restarted
+
+- name: restart nginx
+  service: name=nginx state=restarted

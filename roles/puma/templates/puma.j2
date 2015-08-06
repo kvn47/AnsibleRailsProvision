@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/usr/bin/env bash
 ### BEGIN INIT INFO
 # Provides:          puma 
 # Required-Start:    $remote_fs $syslog
@@ -13,6 +13,7 @@
 # Author: Darío Javier Cravero <dario@exordo.com>
 #
 # Do NOT "set -e"
+set -e
 
 # PATH should only include /usr/* if it runs after the mountnfs.sh script
 PATH=/usr/local/bin:/usr/local/sbin/:/sbin:/usr/sbin:/bin:/usr/bin

@@ -51,7 +51,8 @@ state_path '{{ app_path }}/tmp/pids/puma.state'
 # “false”.
 #
 # stdout_redirect '/u/apps/lolcat/log/stdout', '/u/apps/lolcat/log/stderr'
-stdout_redirect '{{ app_path }}/log/stdout', '{{ app_path }}/log/stderr', true
+#stdout_redirect '{{ app_path }}/log/stdout', '{{ app_path }}/log/stderr', true
+stdout_redirect '{{ app_path }}/log/puma.log', '{{ app_path }}/log/puma.log', true
 
 # Disable request logging.
 #
