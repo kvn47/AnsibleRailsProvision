@@ -15,6 +15,7 @@
     - rails
     - imagemagick
     - ChengLong.nginx-passenger
+    - action-cable
 #    - nginx
 #    - passenger
 #    - puma
