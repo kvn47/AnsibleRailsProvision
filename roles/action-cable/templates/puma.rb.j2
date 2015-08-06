@@ -77,7 +77,7 @@ stdout_redirect '{{ app_path }}/log/stdout', '{{ app_path }}/log/stderr', true
 # bind 'ssl://127.0.0.1:9292?key=path_to_key&cert=path_to_cert'
 bind 'unix:/tmp/{{ app_name }}.sock'
 
-port 28080
+#port 28080
 
 # Instead of “bind 'ssl://127.0.0.1:9292?key=path_to_key&cert=path_to_cert'” you
 # can also use the “ssl_bind” option.
