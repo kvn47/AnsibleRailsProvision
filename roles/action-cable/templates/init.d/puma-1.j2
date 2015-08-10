@@ -1,6 +1,6 @@
 #! /bin/sh
 ### BEGIN INIT INFO
-# Provides:          puma 
+# Provides:          puma
 # Required-Start:    $remote_fs $syslog
 # Required-Stop:     $remote_fs $syslog
 # Default-Start:     2 3 4 5
@@ -32,7 +32,7 @@ RUNPUMA=/usr/local/bin/run-puma
 . /lib/lsb/init-functions
 
 #
-# Function that starts the jungle 
+# Function that starts the jungle
 #
 do_start() {
   log_daemon_msg "=> Running the jungle..."
