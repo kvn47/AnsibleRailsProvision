@@ -28,3 +28,6 @@
 - name: restart unicorn
   command: kill -USR2 {{ unicorn_pid.stdout }}
   when: bundler.stdout.find("unicorn") != -1
+
+- name: restart passenger
+  command: touch {{ app_path }}/tmp/restart.txt
