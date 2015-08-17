@@ -11,15 +11,16 @@
     app:
       process_name: sidekiq
   roles:
-#    - git
-#    - postgresql-client
-#    - redis
-#    - rails
-#    - imagemagick
-#    - ChengLong.nginx-passenger
-#    - action-cable
+    - git
+    - postgresql-client
+    - redis
+    - rails
+    - imagemagick
+    - ChengLong.nginx-passenger
+    - action-cable
+    - sidekiq
+
 #    - nginx
-     - sidekiq
 
 #    - passenger
 
