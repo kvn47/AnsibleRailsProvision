@@ -33,7 +33,7 @@
   command: touch {{ app_path }}/tmp/restart.txt
 
 #- name: restart sidekiq
-#  service: name=sidekiq state=restarted
+#  notify: restart sidekiq
 
-- name: restart sidekiq workers
-  service: name=workers state=restarted
+#- name: restart sidekiq workers
+#  service: name=workers state=restarted
