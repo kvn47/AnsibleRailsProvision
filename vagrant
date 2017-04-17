@@ -16,6 +16,6 @@ localhost
 localhost
 
 [web:vars]
-app_path=/app
+app_path=/var/www/app
 rails_env=production
 user=vagrant

@@ -16,7 +16,7 @@
     - redis
     - rails
     - imagemagick
-    - ChengLong.nginx-passenger
+    - SimpliField.ansible-nginx-passenger
     - action-cable
     - sidekiq
 

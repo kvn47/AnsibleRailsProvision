@@ -10,7 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network 'forwarded_port', guest: 80, host: 8080
   config.vm.provision 'ansible' do |ansible|
     ansible.limit = 'all'
-    ansible.inventory_path = 'staging'
+    ansible.inventory_path = 'vagrant'
     # ansible.inventory_path = 'inventory/staging'
     ansible.playbook = "#{ENV['PLAYBOOK'] || 'provision'}.yml"
   end
