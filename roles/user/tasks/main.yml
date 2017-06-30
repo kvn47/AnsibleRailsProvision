@@ -1,0 +1,15 @@
+- name: create user group
+  group:
+    name: '{{user_group}}'
+
+- name: creates user
+  user:
+    name: "{{user_name}}"
+    password: "{{user_password}}"
+    home: "/home/{{user_name}}"
+    shell: "/bin/bash"
+    group: "{{user_group}}"
+
+- authorized_key:
+    user: "{{user_name}}"
+    key: "{{ lookup('file', '~/.ssh/' + user_key + '.pub') }}"

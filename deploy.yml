@@ -1,6 +1,24 @@
 ---
-- hosts: web
+- name: Deploy application
+  hosts: app
+  vars_files:
+    - vars/main.yml
+
   vars:
-    ansible_ssh_user: "{{ user }}"
+    ansistrano_deploy_to: '{{deploy_path}}'
+    ansistrano_keep_releases: 5
+    ansistrano_shared_paths:
+      - log
+      - tmp
+      - public/uploads
+      - vendor/bundle
+
+    ansistrano_shared_files:
+      - config/schedule.yml
+
+    ansistrano_deploy_via: 'git'
+    ansistrano_git_repo: '{{app_repo}}'
+    ansistrano_git_branch: '{{app_env}}'
+
   roles:
-    - rails-deploy
+    - { role: carlosbuenosvinos.ansistrano-deploy }

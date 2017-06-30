@@ -1,0 +1,5 @@
+---
+user_name: "deploy"
+user_password: "secret"
+user_key: "id_rsa"
+user_group: "deploy"

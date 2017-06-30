@@ -1,21 +1,7 @@
-localhost ansible_ssh_host=127.0.0.1 ansible_ssh_port=2222
+localhost ansible_host=127.0.0.1 ansible_port=2222 ansible_user=ubuntu
 
 [app]
 localhost
 
-[web]
+[python3]
 localhost
-
-[database]
-localhost
-
-[cache]
-localhost
-
-[worker]
-localhost
-
-[web:vars]
-app_path=/var/www/app
-rails_env=production
-user=vagrant

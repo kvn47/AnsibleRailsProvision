@@ -1,0 +1,43 @@
+---
+- hosts: app
+  vars_files:
+    - vars/main.yml
+
+  vars:
+    nodejs_version: 6.x
+    passenger_webserver: nginx
+    passenger_pkgs_state: latest
+
+    rbenv:
+      env: system
+      version: v1.1.1
+      default_ruby: 2.4.1
+      rubies:
+        - version: 2.4.1
+
+    postgresql_version: 9.6
+    postgresql_encoding: 'UTF-8'
+    postgresql_locale: 'ru_RU.UTF-8'
+    postgresql_ctype: 'ru_RU.UTF-8'
+    postgresql_users:
+      - name: '{{db_username}}'
+        pass: '{{db_password}}'
+    postgresql_databases:
+      - name: '{{db_name}}'
+        owner: '{{db_username}}'
+        hstore: yes
+        uuid_ossp: yes
+        citext: yes
+
+  roles:
+    - user
+    - imagemagick
+    - postgresql
+    - ANXS.postgresql
+    - zzet.rbenv
+    - application
+    - nginx_passenger
+    - redis
+    - geerlingguy.nodejs
+    - ocha.yarn
+    - sidekiq

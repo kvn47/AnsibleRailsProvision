@@ -1,0 +1,2 @@
+app_name: "app"
+app_path: "/var/www/{{app_name}}"

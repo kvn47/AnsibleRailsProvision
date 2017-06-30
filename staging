@@ -1,16 +1,14 @@
-web1 ansible_ssh_host=188.226.235.14
+mhc.dev
 
-[web]
-web1
+[app]
+mhc.dev
 
-[database]
-web1
+[python3]
+mhc.dev
 
-[web:vars]
-ansible_ssh_private_key_file=~/.ssh/id_rsa
-ansible_ssh_user=root
-app_name=app
-app_path=/var/www/app
-app_port=8080
-rails_env=staging
-user=deploy
+[app:vars]
+domain_name=smcom.pro
+app_env=staging
+app_name=mhc
+env_file_path=/Users/vova/Projects/MyHomeCollection/MyHomeCollection-site/.env.staging
+user_password=qtgawrfs

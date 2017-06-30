@@ -1,0 +1,21 @@
+- name: updates apt
+  apt: update_cache=yes
+
+- name: install packages
+  apt: pkg={{item}}
+  with_items:
+    - autoconf
+    - build-essential
+    - libreadline6-dev
+    - curl
+    - libcurl4-openssl-dev
+    - git-core
+
+    - telnet
+    - zlib1g-dev
+    - libssl-dev
+    - libyaml-dev
+    - libxml2-dev
+    - libxslt1-dev
+    - libpq-dev
+    - tree

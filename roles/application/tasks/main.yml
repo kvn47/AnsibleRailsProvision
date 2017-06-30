@@ -1,0 +1,24 @@
+---
+- name: creates deploy directory
+  file: path={{deploy_path}} owner={{user_name}} group={{user_name}} state=directory
+
+- name: creates app config folder
+  file: path={{app_path}}/shared/config state=directory
+
+- name: changes app path owner
+  file: path={{app_path}} recurse=yes owner={{user_name}} group={{user_name}} state=directory
+
+- name: copy env file
+  copy: src={{env_file_path}} dest=/etc/profile.d/{{app_name}}.sh
+  tags: configuration
+
+- name: copies gemrc
+  copy:
+    src: "files/gemrc"
+    dest: "/home/{{user_name}}/.gemrc"
+
+- name: installs bundler gem
+  gem: name=bundler executable=/usr/local/rbenv/shims/gem
+
+- name: configures logrotate
+  template: src=logrotate.j2 dest=/etc/logrotate.d/{{app_name}} mode=644

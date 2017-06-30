@@ -1,0 +1,6 @@
+set_exchange_rates:
+  name: 'set_exchange_rates'
+  cron: "0 12 * * 1-5 Asia/Vladivostok"
+  class: "SetExchangeRatesJob"
+  queue: "low"
+  active_job: true

@@ -1,3 +1,0 @@
----
-- name: installs postgresql lib
-  apt: pkg=libpq-dev

@@ -1,0 +1,6 @@
+- name: Install PostgreSQL
+  apt: name={{item}} update_cache=yes state=installed
+  with_items:
+#    - postgresql
+#    - postgresql-contrib
+    - python3-psycopg2

@@ -1,0 +1,21 @@
+---
+deploy_path: '/var/www'
+app_name: 'app'
+app_path: '{{deploy_path}}/{{app_name}}'
+app_env: 'production'
+env_file_path: ''
+
+user_name: 'deploy'
+user_group: 'deploy'
+user_password: 'secret'
+user_key: "id_rsa"
+
+domain_name: "example.com"
+
+db_name: '{{app_name}}'
+db_username: '{{user_name}}'
+db_password: '{{user_password}}'
+db_host: 'localhost'
+db_port: '5432'
+
+nginx_client_max_body_size: '50M'

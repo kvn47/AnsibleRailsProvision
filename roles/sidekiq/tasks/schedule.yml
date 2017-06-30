@@ -1,0 +1,4 @@
+---
+- name: copy schedule.yml file
+  copy: src=schedule.yml dest={{app_path}}/shared/config/schedule.yml
+  tags: configuration
